@@ -1,36 +1,24 @@
-AlignParameters:
-  Enabled: false
-
-Encoding:
-  Enabled: false
-
-ClassLength:
-  Enabled: false
-
-MethodLength:
-  Enabled: false
-
-LineLength:
-  Enabled: false
-
-# HashSyntax:
-#  EnforcedStyle: hash_rockets
-
-Documentation:
-  Enabled: false
-
-PerceivedComplexity:
-  Enabled: false
-
-CyclomaticComplexity:
-  Enabled: false
-
-Style/FileName:
-  Enabled: false
-
-Metrics/AbcSize:
-  Enabled: false
-
-AllCops:
+# rubocop todo:
+#
+Lint/AmbiguousRegexpLiteral:
   Exclude:
-    - 'Guardfile'
+    - 'test/integration/dynamodb_table_create/rspec/dynamodb_table_create_spec.rb'
+    - 'test/integration/dynamodb_table_update/rspec/dynamodb_table_update_spec.rb'
+    - 'test/integration/s3_file/default_spec.rb'
+
+Lint/Loop:
+  Exclude:
+    - 'providers/ebs_raid.rb'
+
+Lint/ParenthesesAsGroupedExpression:
+  Exclude:
+    - 'test/fixtures/cookbooks/aws_test/recipes/dynamodb_table_create.rb'
+    - 'test/fixtures/cookbooks/aws_test/recipes/dynamodb_table_update.rb'
+
+Lint/UselessAssignment:
+  Exclude:
+    - 'libraries/ec2.rb'
+
+# Configuration parameters: CountKeywordArgs.
+Metrics/ParameterLists:
+  Max: 15
